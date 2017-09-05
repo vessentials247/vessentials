@@ -4,6 +4,6 @@ class PagesController < ApplicationController
 	def index
 	end
 
-	def hello
+	def how
 	end
 end
