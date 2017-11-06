@@ -68,12 +68,22 @@ $vessentially-blue: #00a6db;
 #index-box{
 	height: 500px;
 	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	#left-box{
+		max-width: 50%;
+	}
+	#right-text{
+		align-self: flex-end;
+	}
 }
 #index-charity{
 	height: 500px;
 	background-color: #ffffff;
 	background-image: image-url("water.jpg");
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
