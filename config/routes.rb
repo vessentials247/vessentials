@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get  'pages/plans'
   get  'pages/how'
   get  'pages/donate'
+  resources :charges
   root 'pages#index'
 end
