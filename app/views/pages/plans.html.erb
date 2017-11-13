@@ -1,138 +1,132 @@
-<style>
-  .card {
-      display: inline-block;
-      position: relative;
-      width: 100%;
-      margin-bottom: 30px;
-      border-radius: 6px;
-      color: rgba(0,0,0, 0.87);
-      background: #fff;
-      border:none;
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
-  .card-pricing {
-      text-align: center;
-  }
-  .card-pricing .content {
-      padding: 15px !important;
-  }
-  .card-pricing h6{
-      font-size: 0.9em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #999999;
-  }
-  .card-pricing .icon {
-      padding: 10px 0 0px;
-      color: #ff9800;
-  }
-  .card-pricing .icon i {
-      font-size: 55px;
-      border: 1px solid #E5E5E5;
-      border-radius: 50%;
-      width: 130px;
-      line-height: 130px;
-      height: 130px;
-      display: inline-block;
-  }
-  .card-pricing .card-title {
-      margin-top: 30px;
-      color: #3C4858;
-      text-decoration: none;
-      font-weight: 700;
-  }
-  .card-pricing  .card-description{
-    color: #999;
-  }
-  .card-pricing .btn{
-    background-color: #ff9800;
-  color: #FFFFFF;
-  border-radius: 30px;
-  border: none;
-  position: relative;
-  padding: 12px 30px;
-  margin: 10px 1px;
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0;
-  will-change: box-shadow, transform;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 2px 0 rgba(255,152,0, 0.14), 0 3px 1px -2px rgba(255,152,0, 0.2), 0 1px 5px 0 rgba(255,152,0, 0.12);
-  }
-  .card-pricing .btn:hover{
-    box-shadow: 0 2px 2px 0 rgba(255,152,0, 0.42), 0 3px 1px -2px rgba(255,152,0, 0.12), 0 1px 5px 0 rgba(255,152,0, 0.2);
-  }
-</style>
-
-
-
 <div class="container">
   <h1 class="text-center">Check out these sweet plans</h1>
   <br/>
   <div class="row">
-      <div class="col-sm-3">
-          <div class="card card-pricing">
-            <div class="content">
-              <h6 class="category text-gray">Free</h6>
-              <div class="icon icon-info">
-                <i class="material-icons">JToy</i>
-              </div>
-              <h3 class="card-title">$00</h3>
-              <p class="card-description">
-                Vessentially Yours
-              </p>
-              <a href="#pablo" class="btn">Choose Plan</a>
-            </div>
+    <div class="col-sm-3">
+      <div class="card card-pricing">
+        <div class="content">
+          <h6 class="category text-gray">Free</h6>
+          <div class="icon icon-info">
+            <i class="material-icons">JToy</i>
           </div>
+          <h3 class="card-title">$00</h3>
+          <p class="card-description">
+            Vessentially Yours
+          </p>
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+            </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="500"
+                    data-locale="auto"></script>
+          <% end %>
         </div>
+      </div>
+    </div>
 
-        <div class="col-sm-3">
-            <div class="card card-pricing">
-              <div class="content">
-                <h6 class="category text-gray">Starter</h6>
-                <div class="icon icon-info">
-                  <i class="material-icons">JToy</i>
-                </div>
-                <h3 class="card-title">$05</h3>
-                <p class="card-description">
-                  Vessentially Yours #2
-                </p>
-                <a href="#pablo" class="btn">Choose Plan</a>
-              </div>
-            </div>
+    <div class="col-sm-3">
+      <div class="card card-pricing">
+        <div class="content">
+          <h6 class="category text-gray">Starter</h6>
+          <div class="icon icon-info">
+            <i class="material-icons">JToy</i>
           </div>
-
-          <div class="col-sm-3">
-              <div class="card card-pricing">
-                <div class="content">
-                  <h6 class="category text-gray">Business</h6>
-                  <div class="icon icon-info">
-                    <i class="material-icons">JToy</i>
-                  </div>
-                  <h3 class="card-title">$15</h3>
-                  <p class="card-description">
-                    Vessentially Yours #3
-                  </p>
-                  <a href="#pablo" class="btn">Choose Plan</a>
+          <h3 class="card-title">$05</h3>
+          <p class="card-description">
+            Vessentially Yours #2
+          </p>
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
                 </div>
-              </div>
-            </div>
+              <% end %>
+            </article>
 
-            <div class="col-sm-3">
-                <div class="card card-pricing">
-                  <div class="content">
-                    <h6 class="category text-gray">Enterprise</h6>
-                    <div class="icon icon-info">
-                      <i class="material-icons">JToy</i>
-                    </div>
-                    <h3 class="card-title">$25</h3>
-                    <p class="card-description">
-                      Vessentially Yours #4
-                    </p>
-                    <a href="#pablo" class="btn">Choose Plan</a>
-                  </div>
+            <script 
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"
+              data-locale="auto"
+            ></script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card card-pricing">
+        <div class="content">
+          <h6 class="category text-gray">Business</h6>
+          <div class="icon icon-info">
+            <i class="material-icons">JToy</i>
+          </div>
+          <h3 class="card-title">$15</h3>
+          <p class="card-description">
+            Vessentially Yours #3
+          </p>
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
                 </div>
-              </div>
+              <% end %>
+            </article>
+
+            <script 
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"
+              data-locale="auto"
+            ></script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card card-pricing">
+        <div class="content">
+          <h6 class="category text-gray">Enterprise</h6>
+          <div class="icon icon-info">
+            <i class="material-icons">JToy</i>
+          </div>
+          <h3 class="card-title">$25</h3>
+          <p class="card-description">
+            Vessentially Yours #4
+          </p>
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+            </article>
+
+            <script 
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"
+              data-locale="auto"
+            ></script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
