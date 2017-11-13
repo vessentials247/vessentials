@@ -1,5 +1,9 @@
 $vessentially-blue: #00a6db;
 
+.bluessential {
+	color: $vessentially-blue;
+}
+
 #vessentially-a-header{
 	margin: 0;
 	padding: 0;
@@ -68,17 +72,22 @@ $vessentially-blue: #00a6db;
 		}
 	}
 }
-#index-box{
-	height: 500px;
+#index-box {
 	background-color: #ffffff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	#plans-info{
+		font-size: 1.2rem;
+	}
 	#left-box{
 		max-width: 50%;
 	}
 	#right-text{
 		align-self: center;
+	}
+	#bubbles{
+		margin: 3rem 0;
 	}
 }
 #index-charity{
