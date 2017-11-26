@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get  'pages/faq'
   get  'pages/plans'
   get  'pages/how'
+  get  'pages/checkout'
   get  'pages/donate'
   resources :charges
   root 'pages#index'
