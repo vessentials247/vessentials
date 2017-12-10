@@ -1,4 +1,6 @@
 #faqs{
+	$steel: #34495e;
+	$chambray: #2c3e50;
 	font-family:Roboto, sans-serif;
 	.container{
 		line-height: 1.8;
@@ -6,12 +8,13 @@
 	}
 	#faq-headers{
 		h1{
+			color: $chambray;
 			margin-top: 80px;
 	    font-weight: 300;
 	    font-size: 38px;
 		}
 		h2{
-			color: #697176;
+			color: $chambray;
 			font-size: 18px;
 			font-weight: 300;
 			margin-bottom: 60px;
@@ -21,6 +24,7 @@
 	h3{
 		font-size: 16px;
 		font-weight: 700;
+		color: $steel;
 	}
 	p {
 		font-size: 16px;

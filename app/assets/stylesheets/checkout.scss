@@ -1,4 +1,9 @@
 #checkout{  
+  $light-logo: rgba(107, 185, 240, 1);
+  $medium-logo: rgba(58, 83, 155,1);
+  $dark-logo: rgba(30, 139, 195,1);
+  $purple: rgba(75, 119, 190, 1);
+  // DELETE ????????
   html {
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
@@ -97,7 +102,7 @@
     text-shadow: 0 1px 0 #585afa;
   }
   a:hover {
-    border-bottom: 2px solid #bf6bfe;
+    border-bottom: 2px solid $medium-logo;
   }
   ::-moz-selection {
     background: rgba(33, 16, 118, 0.75);
@@ -107,16 +112,18 @@
     background: rgba(33, 16, 118, 0.75);
     text-shadow: none;
   }
+  // DELETE ????????
+
+
+
   .title {
     font-size: 3.5em;
     font-weight: 500;
     margin: .5em .2em .375em;
     text-align: center;
+    color: #00a7db;
   }
-  .title a {
-    color: #e6e6e6;
-    border: 0;
-  }
+
   .progress {
     margin-bottom: 5px;
     text-align: center;
@@ -138,7 +145,7 @@
     transition: all .3s ease;
     letter-spacing: .025em;
     color: inherit;
-    border: 1px solid #211076;
+    border: 1px solid $light-logo;
     border-radius: 3px;
     outline: 0;
     background: rgba(33, 16, 118, 0.75);
@@ -205,7 +212,7 @@
     font-size: 2.125em;
     font-weight: 500;
     margin: 0;
-    color: #e6e6e6;
+    color: $purple;
   }
   .checklist__title-border {
     display: block;
@@ -231,7 +238,7 @@
   }
   .checklist-item {
     display: block;
-    margin: 15px 0;
+    margin: 12px 0;
   }
   .checkbox {
     position: relative;
@@ -242,7 +249,7 @@
     cursor: pointer;
     -webkit-transition: background 150ms ease;
     transition: background 150ms ease;
-    border: 2px solid #211076;
+    border: 2px solid $light-logo;
     border-radius: 3px;
   }
   .checkbox:hover {
@@ -260,8 +267,8 @@
     -webkit-transform: rotate(45deg) scale(0);
     transform: rotate(45deg) scale(0);
     opacity: 0;
-    border-right: 2px solid #bf6bfe;
-    border-bottom: 2px solid #bf6bfe;
+    border-right: 2px solid $medium-logo;
+    border-bottom: 2px solid $medium-logo;
   }
   .checklist-item__title {
     font-size: 1.125em;
@@ -285,7 +292,7 @@
     -webkit-animation: wiggle .4s ease;
     animation: wiggle .4s ease;
     border-color: transparent;
-    background: #211076;
+    background: $light-logo;
   }
   input[type=checkbox]:checked ~ .checkbox:after {
     -webkit-transform: rotate(45deg) scale(1);
@@ -377,7 +384,7 @@
     -webkit-transform-origin: center center;
     transform-origin: center center;
     outline: 1px solid transparent;
-    background: #211076;
+    background: $light-logo;
   }
   .line:after {
     display: block;
@@ -391,13 +398,13 @@
     -webkit-transform-origin: center center;
     transform-origin: center center;
     outline: 1px solid transparent;
-    background: #211076;
+    background: $light-logo;
   }
   .closed.line {
     top: 45%;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
-    background: #bf6bfe;
+    background: $medium-logo;
   }
   .closed.line:after {
     -webkit-transform: rotate(0);
@@ -451,7 +458,7 @@
     width: 37px;
     height: 37px;
     cursor: pointer;
-    border: 2px solid #e6e6e6;
+    border: 2px solid $purple;
     border-radius: 3px;
   }
   .social-buttons a.social-buttons__twitter {
@@ -460,7 +467,7 @@
     background: url(../share-buttons.svg) no-repeat 5px 6px;
   }
   .social-buttons a.social-buttons__twitter:hover {
-    border: 2px dotted #bf6bfe;
+    border: 2px dotted $medium-logo;
   }
   .social-buttons a.social-buttons__facebook {
     margin: 0 7px;
@@ -469,7 +476,7 @@
     background: url(../share-buttons.svg) no-repeat -27px 6px;
   }
   .social-buttons a.social-buttons__facebook:hover {
-    border: 2px dotted #bf6bfe;
+    border: 2px dotted $medium-logo;
   }
   footer {
     font-weight: 300;
@@ -486,7 +493,7 @@
     font-weight: 500;
     padding: 0 .175em;
     vertical-align: middle;
-    color: #bf6bfe;
+    color: $medium-logo;
   }
   .title-404 {
     font-size: 6.5em;
