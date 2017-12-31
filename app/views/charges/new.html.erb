@@ -25,9 +25,11 @@
               </label>
             </article>
 
+            <%= hidden_field_tag :subscription, value: params[:subscription] %>
+
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
+                    data-description="<%= @description %>"
                     data-amount="<%= @amount %>"
                     data-email="<%= current_user.email %>"
                     data-bitcoin="true"
@@ -60,9 +62,11 @@
               </label>
             </article>
 
+            <%= hidden_field_tag :subscription, value: params[:subscription] %>
+
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
+                    data-description="<%= @description %>"
                     data-amount="<%= @amount %>"
                     data-email="<%= current_user.email %>"
                     data-bitcoin="true"
@@ -95,9 +99,11 @@
               </label>
             </article>
 
+            <%= hidden_field_tag :subscription, value: params[:subscription] %>
+
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
+                    data-description="<%= @description %>"
                     data-amount="<%= @amount %>"
                     data-email="<%= current_user.email %>"
                     data-bitcoin="true"
@@ -130,9 +136,11 @@
               </label>
             </article>
 
+            <%= hidden_field_tag :subscription, value: params[:subscription] %>
+
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="A month's subscription"
+                    data-description="<%= @description %>"
                     data-amount="<%= @amount %>"
                     data-email="<%= current_user.email %>"
                     data-bitcoin="true"
