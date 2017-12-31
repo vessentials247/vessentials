@@ -20,12 +20,17 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
+              <label class="amount">
+                <span>Amount: <%= pretty_amount(@amount) %></span>
+              </label>
             </article>
 
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description="A month's subscription"
-                    data-amount="500"
+                    data-amount="<%= @amount %>"
+                    data-email="<%= current_user.email %>"
+                    data-bitcoin="true"
                     data-locale="auto"></script>
           <% end %>
         </div>
@@ -50,15 +55,18 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
+              <label class="amount">
+                <span>Amount: <%= pretty_amount(@amount) %></span>
+              </label>
             </article>
 
-            <script 
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="500"
-              data-locale="auto"
-            ></script>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="<%= @amount %>"
+                    data-email="<%= current_user.email %>"
+                    data-bitcoin="true"
+                    data-locale="auto"></script>
           <% end %>
         </div>
       </div>
@@ -82,15 +90,18 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
+              <label class="amount">
+                <span>Amount: <%= pretty_amount(@amount) %></span>
+              </label>
             </article>
 
-            <script 
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="500"
-              data-locale="auto"
-            ></script>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="<%= @amount %>"
+                    data-email="<%= current_user.email %>"
+                    data-bitcoin="true"
+                    data-locale="auto"></script>
           <% end %>
         </div>
       </div>
@@ -114,15 +125,18 @@
                   <p><%= flash[:error] %></p>
                 </div>
               <% end %>
+              <label class="amount">
+                <span>Amount: <%= pretty_amount(@amount) %></span>
+              </label>
             </article>
 
-            <script 
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="500"
-              data-locale="auto"
-            ></script>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="<%= @amount %>"
+                    data-email="<%= current_user.email %>"
+                    data-bitcoin="true"
+                    data-locale="auto"></script>
           <% end %>
         </div>
       </div>
