@@ -2,20 +2,31 @@
   <div class="container">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link">how it works</a>
+        <%= link_to "how it works", pages_how_path, class: "nav-link" %>
       </li>
       <li class="navbar-item">
-        <a class="nav-link">faq</a>
+        <%= link_to "faq", pages_faq_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link">donate</a>
+        <%= link_to "donate", pages_donate_path, class: "nav-link" %>
       </li>
       <li class="navbar-item">
-        <a class="nav-link">plans</a>
+        <%= link_to "plans", new_charge_path, class: "nav-link" %>
       </li>
       <li class="navbar-item">
-        <a class="nav-link">checkout</a>
+        <%= link_to "checkout", pages_checkout_path, class: "nav-link" %>
       </li>
-    </ul>   
+      <li class="navbar-item">
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, class: "nav-link", method: :delete) %>        
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>  
+          </li>
+        <% end %>
+      </li>
+    </ul>  
   </div>
 </nav>

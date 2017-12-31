@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get  'pages/donate'
 
   resources :charges
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
 end
