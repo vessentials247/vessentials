@@ -51,7 +51,7 @@ html, body, p, div, span{
 	}
 	#lander-logo{
 		margin: 0 auto;
-		margin-top: 15%;
+		margin-top: 9%;
   	text-align: center;
 	}
 	h1,h2,h3{
@@ -119,14 +119,31 @@ html, body, p, div, span{
 		margin: 3rem 0;
 	}
 }
-#index-charity{
-	height: 500px;
+#shirt-banner{
+	height: 150px;
 	background-color: #ffffff;
-	background-image: image-url("water.jpg");
+	background-image: image-url("stock-t.jpeg");
+
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+#index-faq{
+	background-color: #3498db;
+	padding-top: 23px;
+	height: 600px;
+	color: white;
+	background-image: image-url("toiletries.svg");
+	background-repeat: no-repeat;
+	background-position: bottom -200px right 100px;
+	.faq{
+		font-size: 20px;
+		padding: 10px 0;
+	}
+	ul{
+		margin: 0;
+	}
 }
 #index-contact{
 	height: 600px;
