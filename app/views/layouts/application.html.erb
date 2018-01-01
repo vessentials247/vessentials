@@ -6,14 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,700" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= render 'layouts/navbar' %>
     </div>
+    <!-- These alerts take up space despite being empty
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <%= yield %>
 
     <%= render 'layouts/footer' %>
