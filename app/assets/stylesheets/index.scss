@@ -5,12 +5,18 @@ $site-font: 'Dosis', sans-serif;
 .bluessential {
 	color: $vessentially-blue;
 }
+html, body, h1, h2, p, div, span, *{
+	font-family: $site-font;
+}
+html, body, p, div, span{
+	font-size: 20px;
+}
+
 #vessentially-a-header{
 	margin: 0;
 	padding: 0 100px;
 	background: $nav-color;
 	height: 80px;
-	font-family: $site-font;
 	.container{
 		padding-left: 0px;
 		padding-right: 0px;
@@ -60,7 +66,7 @@ $site-font: 'Dosis', sans-serif;
 	background-color: $nav-color;
 	background-image: image-url("stock-box.png"), image-url("stock-shirts2.png");
 	background-size: 35% , 40%;
-	background-position: left bottom, 135% 30%;
+	background-position: left bottom, 133% 90%;
 	background-repeat: no-repeat;
 
 	font-size: 1.8rem;
@@ -68,20 +74,16 @@ $site-font: 'Dosis', sans-serif;
 
 	text-transform: uppercase;
 	#tagline{
-		background: rgba(4, 165, 219, 0.8);
+		background: rgba(228, 241, 254, 0.8);
 		margin-top: auto;
 		width: 100%;
-		height: 65px;
+		height: 75px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
 		bottom: 0px;
 		.container{
-			display: -webkit-box;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -95,12 +97,17 @@ $site-font: 'Dosis', sans-serif;
 	}
 }
 #index-box {
-	background-color: #ffffff;
+	// background-color: #2980b9;
+	// background-image: image-url("stock-pencils.jpg");
+	padding: 50px 0 0 0;
+	background-size: 50%;
+	background-repeat: no-repeat;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	#plans-info{
-		font-size: 1.2rem;
+	#box-info-header{
+		margin: 30px 0;
 	}
 	#left-box{
 		max-width: 50%;
@@ -120,4 +127,24 @@ $site-font: 'Dosis', sans-serif;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+#index-contact{
+	height: 600px;
+	padding-top: 50px;
+	background-color: #08182b;
+	color: #000;
+	background-image: image-url("stock-store.jpg");
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+	.container{
+		height: 100%;
+		#contact-box{
+			background-color: rgba(238, 238, 238, 0.95);
+			padding: 20px;
+			width: 75%;
+			height: 75%;
+		}
+	}
+	
 }
