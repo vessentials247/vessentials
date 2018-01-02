@@ -156,6 +156,21 @@ html, body, p, div, span{
 	background-position: center center;
 	.container{
 		height: 100%;
+		.social-media-icons > ul {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: row;
+			-moz-flex-direction: row;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			a {
+				color: rgba(42, 127, 185, 0.95);
+			}
+		}
 		#contact-box{
 			background-color: rgba(238, 238, 238, 0.95);
 			padding: 20px;
