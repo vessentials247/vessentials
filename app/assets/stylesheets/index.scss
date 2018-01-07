@@ -97,6 +97,26 @@ html, body, p, div, span{
 		}
 	}
 }
+#donation{
+	#donation-bg{
+		height: 300px;
+		background-image: image-url("vessentials4.png");
+		background-position: center left;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	#donation-info{
+		background: #22313F;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		p{
+			max-width: 50%;
+			text-align: center;
+		}
+	}
+}
 #index-box {
 	padding: 50px 0 0 0;
 	background-size: 50%;
