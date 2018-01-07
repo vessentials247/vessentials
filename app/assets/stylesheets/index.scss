@@ -22,9 +22,11 @@ html, body, p, div, span{
 		padding-right: 0px;
 	}
 	.nav-link, p, li{
-		// color: $vessentially-blue;
 		color: $vessentially-blue;
 		text-transform: uppercase;
+	}
+	.navbar-collapse{
+		background: white;
 	}
 }
 #vessentially-a-footer{
@@ -38,7 +40,6 @@ html, body, p, div, span{
 		color: white;
 	}
 	.nav-link, p, li{
-		// color: $vessentially-blue;
 		color: white;
 		text-transform: uppercase;
 	}
@@ -97,8 +98,6 @@ html, body, p, div, span{
 	}
 }
 #index-box {
-	// background-color: #2980b9;
-	// background-image: image-url("stock-pencils.jpg");
 	padding: 50px 0 0 0;
 	background-size: 50%;
 	background-repeat: no-repeat;
@@ -137,6 +136,16 @@ html, body, p, div, span{
 	background-image: image-url("toiletries.svg");
 	background-repeat: no-repeat;
 	background-position: bottom -200px right 100px;
+	#accordion{
+		margin-top: 5%;
+	}
+	.faq-question{
+    margin: 15px 0;
+    a { 
+			color: #E4F1FE;
+    }
+		color: #ffffff;
+	}
 	.faq{
 		font-size: 20px;
 		padding: 10px 0;
@@ -175,7 +184,7 @@ html, body, p, div, span{
 			background-color: rgba(238, 238, 238, 0.95);
 			padding: 20px;
 			width: 75%;
-			height: 75%;
+			height: 90%;
 		}
 	}
 	
