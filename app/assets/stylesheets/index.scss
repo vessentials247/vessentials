@@ -4,6 +4,7 @@ $site-font: 'Dosis', sans-serif;
 
 .bluessential {
 	color: $vessentially-blue;
+  font-size: 1.3rem;
 }
 html, body, h1, h2, p, div, span, *{
 	font-family: $site-font;
@@ -46,13 +47,13 @@ html, body, p, div, span{
 }
 
 #index-shirts{
+  text-align: center;
 	font-family: $site-font;
 	#index-subtag, #index-tag{
 		margin-top: 9px;
 	}
 	#lander-logo{
-		margin: 0 auto;
-		margin-top: 9%;
+		margin: 150px 0 100px 0;
   	text-align: center;
 	}
 	h1,h2,h3{
@@ -121,13 +122,16 @@ html, body, p, div, span{
 	}
 }
 #index-box {
-	padding: 50px 0 0 0;
+	padding: 50px 0 50px 0;
 	background-size: 50%;
 	background-repeat: no-repeat;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+  #plans-info{
+    font-size: 1.3rem;
+  }
 	#box-info-header{
 		margin: 30px 0;
 	}
@@ -173,6 +177,9 @@ html, body, p, div, span{
 	ul{
 		margin: 0;
 	}
+}
+#choose-plan{
+  padding: 50px 0;
 }
 #index-contact{
 	height: 600px;
