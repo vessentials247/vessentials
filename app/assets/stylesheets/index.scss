@@ -98,6 +98,9 @@ html, body, p, div, span{
 	}
 }
 #donation{
+  .row{
+    margin-right: 0px;
+  }
 	#donation-bg{
 		height: 300px;
 		background-image: image-url("vessentials4.png");
