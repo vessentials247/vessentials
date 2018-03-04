@@ -28,6 +28,3 @@
 //= require js/main.js
 //= require js/modal-video.js
 //= require js/animations.js
-
-
-//= require_tree .
