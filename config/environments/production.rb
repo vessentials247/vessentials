@@ -52,7 +52,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   #https://stackoverflow.com/questions/46698432/javascript-working-locally-but-not-on-production
-  config.assets.debug = true
+  # config.assets.debug = true
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
