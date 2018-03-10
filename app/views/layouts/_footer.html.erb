@@ -1,32 +1,61 @@
-<nav id="vessentially-a-footer" class="navbar navbar-expand-sm navbar-dark">
-  <div class="container">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <%= link_to "how it works", pages_how_path, class: "nav-link" %>
-      </li>
-      <li class="navbar-item">
-        <%= link_to "faq", pages_faq_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "donate", pages_donate_path, class: "nav-link" %>
-      </li>
-      <li class="navbar-item">
-        <%= link_to "plans", new_charge_path, class: "nav-link" %>
-      </li>
-      <li class="navbar-item">
-        <%= link_to "checkout", pages_checkout_path, class: "nav-link" %>
-      </li>
-      <li class="navbar-item">
-        <% if user_signed_in? %>
-          <li>
-          <%= link_to('Logout', destroy_user_session_path, class: "nav-link", method: :delete) %>        
-          </li>
-        <% else %>
-          <li>
-          <%= link_to('Login', new_user_session_path, class: "nav-link") %>  
-          </li>
-        <% end %>
-      </li>
-    </ul>  
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-lg-5 col-md-7 col-12 about">
+          <div class="footer-col-inner">
+            <h3 class="title">About Us</h3>
+            <p>
+              Vessentials is a Pennsylvania based company that distributes everyday essentials and hygienic products at value price to the customers by mail. Vessentials delivers essential products monthly for necessary family needs.
+            </p>
+            <p>
+              <a class="more" href="#">
+                Learn more <i class="fa fa-long-arrow-right"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-col col-lg-3 col-md-4 col-12 mr-lg-auto links">
+          <div class="footer-col-inner">
+            <h3 class="title">Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="#"><i class="fa fa-caret-right"></i>Knowledge Base</a></li>
+              <li><a href="#"><i class="fa fa-caret-right"></i>Jobs</a></li>
+              <li><a href="#"><i class="fa fa-caret-right"></i>Press</a></li>
+              <li><a href="#"><i class="fa fa-caret-right"></i>Terms of services</a></li>
+              <li><a href="#"><i class="fa fa-caret-right"></i>Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col col-lg-3 col-12 contact">
+          <div class="footer-col-inner">
+            <h3 class="title">Get in touch</h3>
+            <div class="row">
+              <p class="tel col-lg-12 col-md-4 col-12"><i class="fa fa-phone"></i>0800 123 4567</p>
+              <p class="email col-lg-12 col-md-4 col-12"><i class="fa fa-envelope"></i><a href="#">support@vessentials.com</a></p>
+              <p class="email col-lg-12 col-md-4 col-12"><i class="fa fa-comment"></i><a href="#">Live Chat</a></p>    
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
+  <div class="bottom-bar">
+    <div class="container">
+      <div class="row">
+        <small class="copyright col-md-6 col-12">
+          Copyright Vessentials 
+          <a href="http://www.joshua.toys" target="_blank">@Vessentials</a>
+        </small>
+        <div class="social-container col-md-6 col-12">
+          <ul class="social list-inline">
+            <li class="list-inline-item"><a href="#" ><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" ><i class="fa fa-facebook"></i></a></li>                        
+            <li class="list-inline-item"><a href="#" ><i class="fa fa-linkedin"></i></a></li>
+            <li class="last list-inline-item"><a href="#" ><i class="fa fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
