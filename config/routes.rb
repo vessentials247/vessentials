@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get  'pages/how'
   get  'pages/checkout'
   get  'pages/donate'
+  get  'pages/pricing'
 
   resources :charges
   get 'thanks', to: 'charges#thanks', as: 'thanks'
