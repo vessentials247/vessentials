@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get  'pages/plans'
   get  'pages/how'
   get  'pages/checkout'
-  get  'pages/donate'
+  get  'pages/contact'
   get  'pages/pricing'
 
   resources :charges
