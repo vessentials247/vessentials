@@ -1,25 +1,23 @@
 <header id="header" class="header">  
   <div class="container">            
     <h1 class="logo">
-      <a href="index.html">
-        <%= link_to image_tag("logo.jpg", width: "80px"), root_path, class: 'logo-title'  %>
-      </a>
-    </h1><!--//logo-->              
+      <a href="index.html"><%= link_to image_tag("logo.jpg", width: "80px"), root_path, class: 'logo-title' %></a>
+    </h1>
     <nav class="main-nav navbar navbar-expand-md navbar-dark" role="navigation">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>           
       <div class="navbar-collapse collapse justify-content-end" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="active nav-item"><%= link_to "Home", root_path, :class=>"nav-link" %></li>
           <li class="nav-item"><%= link_to "How It Works", pages_how_path, :class=>"nav-link" %></li>
-          
-          
           <li class="nav-item"><%= link_to "Get In Touch", pages_contact_path, :class=>"nav-link" %></li>                         
           <li class="nav-item"><a class="nav-link login-trigger" data-toggle="modal" data-target="#login-modal">Log in</a></li>
-          <li class="nav-item nav-item-cta last"><a class="nav-link btn btn-cta btn-cta-primary" data-toggle="modal" data-target="#signup-modal" >Get Started</a></li>
-        </ul><!--//nav-->
-      </div><!--//navabr-collapse-->
-    </nav><!--//main-nav-->     
-  </div><!--//container-->
-</header><!--//header-->
+          <li class="nav-item nav-item-cta last">
+            <a class="nav-link btn btn-cta btn-cta-primary" data-toggle="modal" data-target="#signup-modal" >Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
