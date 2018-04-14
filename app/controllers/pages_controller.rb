@@ -7,7 +7,6 @@ class PagesController < ApplicationController
 	def how
 	end
 
-
 	def faq
 	end
 	

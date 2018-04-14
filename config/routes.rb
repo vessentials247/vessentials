@@ -6,15 +6,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   get  'pages/faq'
-  get  'pages/plans'
-  
   get  'pages/checkout'
   # Maybe just put in public DIR later
-  get  '/how' => 'pages#how'
-  get  '/faq' => 'pages#faq'
-  get  '/plans' => 'pages#plans'
+  get  '/how'     => 'pages#how'
+  get  '/faq'     => 'pages#faq'
+  get  '/plans'   => 'pages#plans'
   get  '/contact' => 'pages#contact'
-  get  '/pricing' => 'pages#pricing'
 
   resources :charges
   get 'thanks', to: 'charges#thanks', as: 'thanks'
