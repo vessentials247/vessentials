@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
   get  'pages/faq'
   get  'pages/plans'
-  get  'pages/how'
+  
   get  'pages/checkout'
-  get  'pages/contact'
-  get  'pages/pricing'
+  # Maybe just put in public DIR later
+  get  '/how' => 'pages#how'
+  get  '/faq' => 'pages#faq'
+  get  '/plans' => 'pages#plans'
+  get  '/contact' => 'pages#contact'
+  get  '/pricing' => 'pages#pricing'
 
   resources :charges
   get 'thanks', to: 'charges#thanks', as: 'thanks'
