@@ -1,0 +1,10 @@
+.alert.alert-primary{
+	margin: 10px auto;
+	position: absolute;
+	width: 50%;
+	z-index: 3;
+	left: 25%;
+	&:empty {
+		display: none;
+	}
+}
