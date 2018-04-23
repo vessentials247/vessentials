@@ -2,3 +2,6 @@
 
 If you are here to edit pages, edit pages in this directory:
 <br> <a href="https://github.com/toymechqm/vessentials/tree/master/app/views/pages">vessentials/app/views/pages</a>
+
+The Faq section on the homepage:
+https://github.com/toymechqm/vessentials/blob/master/app/views/pages/index.html.erb
