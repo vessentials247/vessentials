@@ -38,10 +38,10 @@ $(document).ready(function() {
     
     /* ======= Toggle between Signup & Login & ResetPass Modals ======= */ 
     $('#signup-link').on('click', function(e) {
-        $('#login-modal').modal('toggle');
-        $('#signup-modal').modal();
-
-        e.preventDefault();
+        // $('#login-modal').modal('toggle');
+        // $('#signup-modal').modal();
+        // e.preventDefault();
+        console.log("main menu toggler");
     });
     
     $('#login-link').on('click', function(e) {
