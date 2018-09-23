@@ -12,16 +12,85 @@
      <div class="card-deck mb-3 text-center">
        <div class="card mb-4 box-shadow">
          <div class="card-header">
-           <h4 class="my-0 font-weight-normal">Free</h4>
+           <h4 class="my-0 font-weight-normal">Male</h4>
+         </div>
+         <div class="card-body">
+          <h1 class="card-title pricing-card-title">$24.99 <small class="text-muted">/ mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Shirt </li>
+            <li>Underwear </li>
+            <li>Socks</li>
+            <li>Toothbrush</li>
+            <li>Toothpaste</li>
+            <li>Body Wash</li>
+            <li>Shampoo</li>
+            <li>Deodorant</li>
+            <li>Hand Sanitiser</li>
+            <li>Lotion</li>
+          </ul>
+           <%= form_tag charges_path do %>
+             <article>
+               <% if flash[:error].present? %>
+                 <div id="error_explanation">
+                   <p><%= flash[:error] %></p>
+                 </div>
+               <% end %>
+             </article>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Size
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Men's Size Small</a>
+                <a class="dropdown-item" href="#">Men's Size Medium</a>
+                <a class="dropdown-item" href="#">Men's Size Large</a>
+                <a class="dropdown-item" href="#">Men's Size XL</a>
+              </div>
+            </div>
+            <br>
+            <script 
+             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+             data-description="A month's subscription"
+             data-amount="2499"
+             data-locale="auto"
+            >
+            </script>
+           <% end %>
+         </div>
+       </div>
+
+       <div class="card mb-4 box-shadow">
+         <div class="card-header">
+           <h4 class="my-0 font-weight-normal">Feminine</h4>
          </div>
          <div class="card-body">
            <h1 class="card-title pricing-card-title">$24.99 <small class="text-muted">/ mo</small></h1>
            <ul class="list-unstyled mt-3 mb-4">
-             <li>Mens Vessential</li>
-             <li>2 GB of storage</li>
-             <li>Email support</li>
-             <li>Help center access</li>
+            <li>Shirt</li>
+            <li>panties</li>
+            <li>socks</li>
+            <li>Toothbrush</li>
+            <li>Toothpaste</li>
+            <li>Body Wash</li>
+            <li>Shampoo</li>
+            <li>Conditioner</li>
+            <li>Deodorant</li>
+            <li>Pads/Tampons</li>
            </ul>
+           <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Choose Size
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" href="#">Women's Size Small</a>
+               <a class="dropdown-item" href="#">Women's Size Medium</a>
+               <a class="dropdown-item" href="#">Women's Size Large</a>
+               <a class="dropdown-item" href="#">Women's Size XL</a>
+             </div>
+           </div>
+            <br>
+
            <%= form_tag charges_path do %>
              <article>
                <% if flash[:error].present? %>
@@ -40,55 +109,16 @@
              >
              </script>
            <% end %>
-           <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
-         </div>
-       </div>
-       <div class="card mb-4 box-shadow">
-         <div class="card-header">
-           <h4 class="my-0 font-weight-normal">Pro</h4>
-         </div>
-         <div class="card-body">
-           <h1 class="card-title pricing-card-title">$24.99 <small class="text-muted">/ mo</small></h1>
-           <ul class="list-unstyled mt-3 mb-4">
-             <li>Women's Vessentials</li>
-             <li>10 GB of storage</li>
-             <li>Priority email support</li>
-             <li>Help center access</li>
-           </ul>
-           <%= form_tag charges_path do %>
-             <article>
-               <% if flash[:error].present? %>
-                 <div id="error_explanation">
-                   <p><%= flash[:error] %></p>
-                 </div>
-               <% end %>
-             </article>
-
-             <script 
-               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-               data-description="A month's subscription"
-               data-amount="2499"
-               data-locale="auto"
-             >
-             </script>
-           <% end %>
-           <!-- <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button> -->
          </div>
        </div>
 
        <div class="card mb-4 box-shadow">
          <div class="card-header">
-           <h4 class="my-0 font-weight-normal">Enterprise</h4>
+           <h4 class="my-0 font-weight-normal">Home Health</h4>
          </div>
          <div class="card-body">
            <h1 class="card-title pricing-card-title">$29</h1>
-           <ul class="list-unstyled mt-3 mb-4">
-             <li>Home Health</li>
-             <li>15 GB of storage</li>
-             <li>Phone and email support</li>
-             <li>Help center access</li>
-           </ul>
+
 
            <%= form_tag charges_path do %>
              <article>
@@ -115,15 +145,15 @@
 
        <div class="card mb-4 box-shadow">
          <div class="card-header">
-           <h4 class="my-0 font-weight-normal">Enterprise</h4>
+           <h4 class="my-0 font-weight-normal">Infant</h4>
          </div>
          <div class="card-body">
            <h1 class="card-title pricing-card-title">$29</h1>
            <ul class="list-unstyled mt-3 mb-4">
-             <li>Baby Care</li>
-             <li>15 GB of storage</li>
-             <li>Phone and email support</li>
-             <li>Help center access</li>
+            <li>Detergent </li>
+            <li>bleach </li>
+            <li>Fabric Softener </li>
+            <li>Sponges </li>
            </ul>
 
            <%= form_tag charges_path do %>
@@ -148,6 +178,7 @@
          </div>
        </div>
      </div>
+    </div>
 
 <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
   <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">

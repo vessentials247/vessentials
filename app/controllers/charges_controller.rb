@@ -11,7 +11,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @mens_small = 2499
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -20,8 +20,8 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :amount      => @mens_small,
+      :description => 'Mens Small',
       :currency    => 'usd'
     )
 
@@ -30,24 +30,6 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
-  # def create
-  #   if params[:subscription].include? 'yes'
-  #     StripeTool.create_membership(email: params[:stripeEmail], 
-  #                                  stripe_token: params[:stripeToken],
-  #                                  plan: @plan)
-  #   else
-  #     customer = StripeTool.create_customer(email: params[:stripeEmail], 
-  #                                           stripe_token: params[:stripeToken])
-  #     charge = StripeTool.create_charge(customer_id: customer.id, 
-  #                                     amount: @amount,
-  #                                     description: @description)
-  #   end
-
-  #   redirect_to thanks_path
-  # rescue Stripe::CardError => e
-  #   flash[:error] = e.message
-  #   redirect_to new_charge_path
-  # end
 
   private
 
