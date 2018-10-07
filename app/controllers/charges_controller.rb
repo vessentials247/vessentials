@@ -4,42 +4,28 @@ class ChargesController < ApplicationController
   before_action :set_plan
 
   def new
-    @plans = { "value1" => 1, "value2" => 2 }
   end
 
   def thanks
   end
 
   def create
-    # @plan = params[:selected_plan]
-    # Amount in cents
-    @mens_small = 2999
-    @womens_small = 2999
+    if params[:selected_plan_male].blank? && params[:selected_plan_female].blank?
+      response = { "error" => "Ooops! Don't forget to select a plan..." }
+      render json: response, status: :bad_request
+      return
+    end
+
+    @selected_plan = params[:selected_plan_male] || params[:selected_plan_female]
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken],
     )
 
-    # subscription = Stripe::Plan.create(
-    #   usage_type: 'licensed',
-    #   currency: 'usd',
-    #   interval: 'month',
-    #   product: 'prod_Djx54WxAITEwES',
-    #   nickname: 'Pro Plan',
-    #   amount: 3000,
-    # )
-
-    # charge = Stripe::Charge.create(
-    #   :customer    => customer.id,
-    #   :amount      => @mens_small,
-    #   :description => 'Mens Small one off',
-    #   :currency    => 'usd'
-    # )
-s
     subscription = Stripe::Subscription.create(
       :customer => customer.id,
-      :plan => "plan_Djx6Gwr5kXOFPq"
+      :plan => @selected_plan
     )
 
   rescue Stripe::CardError => e

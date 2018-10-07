@@ -6,122 +6,21 @@
 </div>
 <div class="container">
   <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 box-shadow">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Male</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">$24.99 
-          <small class="text-muted">/ mo</small>
-        </h1>
-        <ul class="list-unstyled mt-3 mb-3">
-          <li>Shirt </li>
-          <li>Underwear </li>
-          <li>Deodorant</li>
-          <li>Shaving Cream</li>
-          <li>Hand Sanitiser</li>
-          <li>Lotion</li>
-        </ul><%= form_tag charges_path do %>
-        <article>
-          <% if flash[:error].present? %>
-            <div id="error_explanation">
-              <p><%= flash[:error] %></p>
-            </div>
-          <% end %>
-        </article>
-        <select class="custom-select mb-3" id="male" onchange="male()">
-          <option selected>Choose a Size</option>
-          <option value="prod_Djx54WxAITEwES">Small</option>
-          <option value="prod_Djx54WxAITEwES">Medium</option>
-          <option value="prod_DjxZ6yCTdyL10F">Large</option>
-          <option value="prod_DjxZ6yCTdyL10F">X-Large</option>
-          <option value="prod_DjxZ6yCTdyL10F">XX-Large</option>
-        </select><%= form_tag charges_path do %>
-        <article>
-          <% if flash[:error].present? %>
-            <div id="error_explanation">
-              <p><%= flash[:error] %></p>
-            </div>
-          <% end %>
-        </article>
-          <%= hidden_field_tag :subscription, value: params[:subscription] %>
-          <script 
-            src="https://checkout.stripe.com/checkout.js" 
-            class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>" 
-            data-description = "Monthly Men's Vessentials" 
-            data-amount =  <%=@mens_small %>
-            data-email = <%= current_user.email %>
-            data-locale = "auto" 
-          >
-          </script>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="card mb-4 box-shadow">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Feminine</h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title">$24.99 
-          <small class="text-muted">/ mo</small>
-        </h1>
-        <ul class="list-unstyled mt-3 mb-3">
-          <li>Shirt</li>
-          <li>panties</li>
-          <li>socks</li>
-          <li>Toothbrush</li>
-          <li>Conditioner</li>
-          <li>Deodorant</li>
-          <li>Pads/Tampons</li>
-        </ul>
-   
-        <%= form_tag charges_path do %>
-          <article>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-          </article>
-          
-          <%= hidden_field_tag :selected_plan, id: 'female-plan' %>
-          <select id='female' class="custom-select mb-3" onchange="female()">
-            <option selected>Choose a Size</option>
-            <option value="prod_DjxVp3oJA5ffHJ">Small</option>
-            <option value="prod_Djxbwyz2tK4sOS">Medium</option>
-            <option value="prod_Dk5kUrxEqk7E1Z">Large</option>
-            <option value="prod_DjxVp3oJA5ffHJ">X-Large</option>
-            <option value="prod_DjxVp3oJA5ffHJ">XX-Large</option>
-          </select>
 
-          <script 
-            src="https://checkout.stripe.com/checkout.js" 
-            class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>" 
-            data-description = "Monthly Women's Vessentials" 
-            data-email = <%= current_user.email %>
-            data-locale = "auto"
-          >
-          </script>
-        <% end %>
+    <%= render 'charges/male_plans' %>
+    <%= render 'charges/female_plans' %>
 
-      </div>
-    </div>
   </div>
 </div>
 
 <script>
-    const female = () => {
-      const e = document.getElementById("female");
-      const plan = e.options[e.selectedIndex].value;
-      debugger;
+  const changePlan = (plan) => {
+    const selected = event.target.value;
+    if(plan === 'male'){
+      document.getElementById("selected_plan_male").value = selected;
+    } 
+    if(plan === 'female'){
+      document.getElementById("selected_plan_female").value = selected;
     }
-
-    const male = () => {
-      const e = document.getElementById("male");
-      const plan = e.options[e.selectedIndex].value;
-      debugger;
-    }
+  }
 </script>
