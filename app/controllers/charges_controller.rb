@@ -10,19 +10,22 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents
-    @amount = 500
+    if params[:selected_plan_male].blank? && params[:selected_plan_female].blank?
+      response = { "error" => "Ooops! Don't forget to select a plan..." }
+      render json: response, status: :bad_request
+      return
+    end
+
+    @selected_plan = params[:selected_plan_male] || params[:selected_plan_female]
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+      :source  => params[:stripeToken],
     )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+    subscription = Stripe::Subscription.create(
+      :customer => customer.id,
+      :plan => @selected_plan
     )
 
   rescue Stripe::CardError => e
@@ -30,24 +33,6 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
-  # def create
-  #   if params[:subscription].include? 'yes'
-  #     StripeTool.create_membership(email: params[:stripeEmail], 
-  #                                  stripe_token: params[:stripeToken],
-  #                                  plan: @plan)
-  #   else
-  #     customer = StripeTool.create_customer(email: params[:stripeEmail], 
-  #                                           stripe_token: params[:stripeToken])
-  #     charge = StripeTool.create_charge(customer_id: customer.id, 
-  #                                     amount: @amount,
-  #                                     description: @description)
-  #   end
-
-  #   redirect_to thanks_path
-  # rescue Stripe::CardError => e
-  #   flash[:error] = e.message
-  #   redirect_to new_charge_path
-  # end
 
   private
 

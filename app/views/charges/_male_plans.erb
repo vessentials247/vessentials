@@ -1,0 +1,49 @@
+<div class="card mb-4 box-shadow">
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal">Male</h4>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title pricing-card-title">$24.99 
+      <small class="text-muted">/ mo</small>
+    </h1>
+    <ul class="list-unstyled mt-3 mb-3">
+      <li>Shirt </li>
+      <li>Underwear </li>
+      <li>Deodorant</li>
+      <li>Shaving Cream</li>
+      <li>Hand Sanitiser</li>
+      <li>Lotion</li>
+    </ul>
+
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+      </article>
+
+      <select class="custom-select mb-3" onchange="changePlan('male')">
+        <option selected>Vessentials Sizes</option>
+        <option value="plan_Djx6Gwr5kXOFPq">Small</option>
+        <option value="plan_DjxZWW9iNPyuc5">Medium</option>
+        <option value="plan_DkBZSflaxOuK2b">Large</option>
+        <option value="plan_DkBXTEBPwns4H5">X-Large</option>
+        <option value="plan_DkBal3vVA1NJAj">XX-Large</option>
+      </select>
+      <%= hidden_field_tag :selected_plan_male, '' %>
+      <br />
+      
+      <script 
+        src="https://checkout.stripe.com/checkout.js" 
+        class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>" 
+        data-description = "Monthly Men's Vessentials" 
+        data-amount =  <%=@mens_small %>
+        data-email = <%= current_user.email %>
+        data-locale = "auto" >
+      </script>
+    <% end %>
+  </div>
+</div>

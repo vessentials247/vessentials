@@ -1,154 +1,26 @@
+<div class="position-relative overflow-hidden p-3 mb-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Vessentially Yours</h1>
+    <p class="lead font-weight-normal">Get whats Vessential to you...</p>
+  </div>
+</div>
 <div class="container">
-  <h1 class="text-center">Check out these sweet plans</h1>
-  <br/>
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="card card-pricing">
-        <div class="content">
-          <h6 class="category text-gray">Free</h6>
-          <div class="icon icon-info">
-            <i class="material-icons">JToy</i>
-          </div>
-          <h3 class="card-title">$00</h3>
-          <p class="card-description">
-            Vessentially Yours
-          </p>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Amount: <%= pretty_amount(@amount) %></span>
-              </label>
-            </article>
+  <div class="card-deck mb-3 text-center">
 
-            <%= hidden_field_tag :subscription, value: params[:subscription] %>
-
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= @description %>"
-                    data-amount="<%= @amount %>"
-                    data-email="<%= current_user.email %>"
-                    data-bitcoin="true"
-                    data-locale="auto"></script>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-3">
-      <div class="card card-pricing">
-        <div class="content">
-          <h6 class="category text-gray">Starter</h6>
-          <div class="icon icon-info">
-            <i class="material-icons">JToy</i>
-          </div>
-          <h3 class="card-title">$05</h3>
-          <p class="card-description">
-            Vessentially Yours #2
-          </p>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Amount: <%= pretty_amount(@amount) %></span>
-              </label>
-            </article>
-
-            <%= hidden_field_tag :subscription, value: params[:subscription] %>
-
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= @description %>"
-                    data-amount="<%= @amount %>"
-                    data-email="<%= current_user.email %>"
-                    data-bitcoin="true"
-                    data-locale="auto"></script>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-3">
-      <div class="card card-pricing">
-        <div class="content">
-          <h6 class="category text-gray">Business</h6>
-          <div class="icon icon-info">
-            <i class="material-icons">JToy</i>
-          </div>
-          <h3 class="card-title">$15</h3>
-          <p class="card-description">
-            Vessentially Yours #3
-          </p>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Amount: <%= pretty_amount(@amount) %></span>
-              </label>
-            </article>
-
-            <%= hidden_field_tag :subscription, value: params[:subscription] %>
-
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= @description %>"
-                    data-amount="<%= @amount %>"
-                    data-email="<%= current_user.email %>"
-                    data-bitcoin="true"
-                    data-locale="auto"></script>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-3">
-      <div class="card card-pricing">
-        <div class="content">
-          <h6 class="category text-gray">Enterprise</h6>
-          <div class="icon icon-info">
-            <i class="material-icons">JToy</i>
-          </div>
-          <h3 class="card-title">$25</h3>
-          <p class="card-description">
-            Vessentially Yours #4
-          </p>
-          <%= form_tag charges_path do %>
-            <article>
-              <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-              <% end %>
-              <label class="amount">
-                <span>Amount: <%= pretty_amount(@amount) %></span>
-              </label>
-            </article>
-
-            <%= hidden_field_tag :subscription, value: params[:subscription] %>
-
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="<%= @description %>"
-                    data-amount="<%= @amount %>"
-                    data-email="<%= current_user.email %>"
-                    data-bitcoin="true"
-                    data-locale="auto"></script>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render 'charges/male_plans' %>
+    <%= render 'charges/female_plans' %>
 
   </div>
 </div>
+
+<script>
+  const changePlan = (plan) => {
+    const selected = event.target.value;
+    if(plan === 'male'){
+      document.getElementById("selected_plan_male").value = selected;
+    } 
+    if(plan === 'female'){
+      document.getElementById("selected_plan_female").value = selected;
+    }
+  }
+</script>
